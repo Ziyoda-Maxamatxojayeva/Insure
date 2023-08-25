@@ -519,35 +519,46 @@ img {
 
 /* FOOTER STARTED */
 .site-footer {
-    padding: 67px 0 64px;
+    padding: 64px 0;
+    background-color: #FAFAFA;
     background-image: url("../images/footer-bg.png");
     background-repeat: no-repeat;
-    background-position: calc(50% - 430px) -8px;
 }
 
 .footer__top {
-    padding-bottom: 36px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 36px;
     border-bottom: 1px solid #DADADA;
 }
 
 .footer__list {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
+.footer__link {
+    color: #837D88;
+    transition: color 0.5s ease;
+}
+
+.footer__link:hover {
+    color: #2C2830;
+}
+
 .footer__bottom {
-    padding: 48px 220px 0 0;
+    padding: 48px 180px 0 0;
     display: flex;
     justify-content: space-between;
 }
 
 .footer__subtitle {
+    display: inline-block;
+    margin-bottom: 36px;
     color: #837D88;
     font-size: 13px;
     font-weight: 700;
@@ -555,13 +566,13 @@ img {
 }
 
 .footer__sublist {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
     margin: 0;
-    margin-top: 36px;
     padding: 0;
     list-style-type: none;
+}
+
+.footer__subitem:not(:last-child) {
+    margin-bottom: 1rem;
 }
 
 .footer__sublink {
@@ -575,29 +586,40 @@ img {
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 871px){
+    .footer__bottom {
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .site-footer{
+        background-image: url("../images/footerMobileBg.png");
+        background-size: contain;
+    }
+
     .footer__top {
         flex-direction: column;
    }
 
-   .footer__logolink {
-        margin-bottom: 32px;
-   }
+   .footer__list {
+        margin-top: 32px;
+        padding-bottom: 40px;
+    }
 
-   .footer__bottom {
+    .footer__bottom {
         flex-direction: column;
         text-align: center;
-   }
+    }
 
-   .footer__wrapper {
-        width: 250px;
+    .footer__wrapper:not(:last-child) {
         margin-bottom: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-   }
-   .footer__wrapper:last-child {
-        margin-bottom: 0;
-   }
+    }
+}
+
+@media only screen and (max-width: 376px){
+    .site-footer {
+        background-size: auto;
+    }
 }
 /* FOOTER ENDED */
